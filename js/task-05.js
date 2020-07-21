@@ -1,36 +1,18 @@
-"use strict";
-let deliveryCost;
-let message;
-let country;
-
-const countryInputValue = prompt("Введите страну");
-switch (countryInputValue.toLowerCase()) {
-  case "китай":
-    country = "Китай";
-    deliveryCost = 100;
-    message = `'Доставка в ${country} будет стоить ${deliveryCost} кредитов'`;
-    break;
-  case "чили":
-    country = "Чили";
-    deliveryCost = 250;
-    message = `'Доставка в ${country} будет стоить ${deliveryCost} кредитов'`;
-    break;
-  case "австралия":
-    country = "Австралия";
-    deliveryCost = 170;
-    message = `'Доставка в ${country} будет стоить ${deliveryCost} кредитов'`;
-    break;
-  case "индия":
-    country = "Индия";
-    deliveryCost = 80;
-    message = `'Доставка в ${country} будет стоить ${deliveryCost} кредитов'`;
-    break;
-  case "ямайка":
-    country = "Ямайка";
-    deliveryCost = 120;
-    message = `'Доставка в ${country} будет стоить ${deliveryCost} кредитов'`;
-    break;
-  default:
-    message = "Вашей страны нет в списке";
-}
-alert(message);
+const checkForSpam = function(message) {
+  message = message.toLowerCase();
+    const spamArray = ["spam", "sale"];
+    for (let word of spamArray) {
+      if (message.includes(word)) {
+        return true;
+      } 
+    }
+   return false;
+    };
+  
+  console.log(checkForSpam('Latest technology news')); 
+  
+  console.log(checkForSpam('JavaScript weekly newsletter')); 
+  
+  console.log(checkForSpam('Get best sale offers now!')); 
+  
+  console.log(checkForSpam('[SPAM] How to earn fast money?')); 

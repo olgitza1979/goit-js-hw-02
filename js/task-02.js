@@ -1,10 +1,30 @@
-"use strict";
+const calculateEngravingPrice = function (message, pricePerWord) {
+  let count;
+  const wordCounter = message.split(" ");
+  for (const items of wordCounter) {
+    let result = wordCounter.length * pricePerWord;
+    return result;
+  }
+};
 
-const total = 100;
-const ordered = 120;
+console.log(
+  calculateEngravingPrice(
+    "Proin sociis natoque et magnis parturient montes mus",
+    10
+  )
+);
 
-const answer =
-  ordered > total
-    ? "На складе недостаточно товаров!"
-    : "Заказ оформлен, с вами свяжется менеджер";
-console.log(answer);
+console.log(
+  calculateEngravingPrice(
+    "Proin sociis natoque et magnis parturient montes mus",
+    20
+  )
+);
+
+console.log(
+  calculateEngravingPrice("Donec orci lectus aliquam est magnis", 40)
+);
+
+console.log(
+  calculateEngravingPrice("Donec orci lectus aliquam est magnis", 20)
+);

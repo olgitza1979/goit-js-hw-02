@@ -1,16 +1,30 @@
-"use strict";
-
+const numbers = [];
+let input;
 let total = 0;
-let message;
-
-do {
-    message = prompt ("Введите число");
-    if (Number.isNaN (+message)) {
-        alert ("Вы ввели не число, повторите");
+const count = function(input) {
+  while (true) {
+    input = prompt("Введите число");
+    if (input === null) {
+      total = 0;
+      for (let number of numbers) {
+        total += number;
+      }
+      
+      alert(`Общая сумма чисел равна ${total},массив чисел состоит из: ${numbers}`);
+      
+      break;
+    } else {
+      input = Number(input);
+      const notNumber = Number.isNaN(input);
+      if (notNumber) {
+        alert("Было введено не число, попробуйте еще раз");
+        continue;
+      }
     }
-    else {
-        total += +message;
-          }
-        }
-while (message !== null);
-alert (total);
+   numbers.push(Number(input));
+   
+  }
+
+};
+
+count();
